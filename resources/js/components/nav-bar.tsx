@@ -23,20 +23,23 @@ export default function NavBar() {
 
   const navLinks = [
     { label: 'Home', href: '/' },
-    { label: 'My CV', href: '/cv' },
+    { label: 'Courses', href: '/courses' },
+    { label: 'Testimonials', href: '/testimonials' },
+    { label: 'Pricing', href: '/pricing' },
   ];
 
-  const projectLinks = [1, 2, 3].map(i => ({
-    label: `Project ${i}`,
-    href: `/projects/${i}`,
-  }));
+  const projectLinks = [
+    { label: 'Blog', href: '/blog' },
+    { label: 'Support', href: '/support' },
+    { label: 'Newsletter', href: '/newsletter' }
+  ];
 
   const authLinks = auth.user
     ? [{ label: 'Dashboard', href: '/dashboard' }]
     : [
-        { label: 'Log in', href: '/login' },
-        { label: 'Register', href: '/register' },
-      ];
+      { label: 'Log in', href: '/login' },
+      { label: 'Register', href: '/register' },
+    ];
 
   useEffect(() => {
     const stored = localStorage.getItem('theme');
@@ -116,7 +119,7 @@ export default function NavBar() {
 
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="text-gray-800 dark:text-gray-100 hover:text-indigo-600 dark:hover:text-indigo-300 font-medium text-base">
-                  Projects
+                  Resources
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="bg-white dark:bg-gray-800 p-4 shadow-md rounded-lg space-y-2 min-w-[160px] border border-gray-200 dark:border-gray-700">
